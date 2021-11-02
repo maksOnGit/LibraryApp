@@ -5,14 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyLibraryApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Library" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="All Books" HorizontalAlignment="Left" />
-        <ListBox x:Name="lstAllBooks" HorizontalAlignment="Left" Width="194" Margin="0,39,0,-39"/>
-        <Label Content="All Books" HorizontalAlignment="Left" />
-        <ListBox x:Name="lstAllCustomers" HorizontalAlignment="Left" Width="194" Margin="0,39,0,-39"/>
+        <StackPanel>
+            <Label Content="All Books" HorizontalAlignment="Center" />
+            <ListBox x:Name="lstAllBooks" HorizontalAlignment="Center" Width="194" MinHeight="350"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Label  Content="All Customers" HorizontalAlignment="Center" />
+            <ListBox x:Name="lstAllCustomers" HorizontalAlignment="Center" Width="194" MinHeight="350"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2">
+            <Label Content="Issue book:" HorizontalAlignment="Left" Margin="5"/>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Label Content="Book:" MinWidth="80"/>
+                <ComboBox x:Name="cmbAvaiableBooks" HorizontalAlignment="Left" Width="120"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Label Content="Customer:" MinWidth="80"/>
+                <ComboBox x:Name="cmbCustomer" HorizontalAlignment="Left" Width="120"/>
+            </StackPanel>
+            <Button x:Name="btnIssueBook" Content="Issue Book" HorizontalAlignment="Center" Width="100" Height="30"  Margin="5 10 5 5"/>
+        </StackPanel>
     </Grid>
 </Window>
