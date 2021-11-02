@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryLib.Data
 {
-    class MockDataSeeder
+    public class MockDataSeeder
     {
     }
 }

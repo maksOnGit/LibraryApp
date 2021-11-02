@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\MockDataSeeder.cs" />
     <Compile Include="Domain\Interfaces\IAuthors.cs" />
     <Compile Include="Domain\Interfaces\IBooks.cs" />
     <Compile Include="Domain\Interfaces\ICategories.cs" />
@@ -51,10 +52,13 @@
     <Compile Include="Domain\Models\Category.cs" />
     <Compile Include="Domain\Models\Customer.cs" />
     <Compile Include="Domain\Models\Publisher.cs" />
+    <Compile Include="Domain\Services\Mock\MokAuthorsService.cs" />
+    <Compile Include="Domain\Services\Mock\MokBooksService.cs" />
+    <Compile Include="Domain\Services\Mock\MokCategoriesService.cs" />
+    <Compile Include="Domain\Services\Mock\MokCustomerService.cs" />
+    <Compile Include="Domain\Services\Mock\MokPublishersService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Domain\Services\Mock\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
