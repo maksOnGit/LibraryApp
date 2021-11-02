@@ -41,16 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Interfaces\IAuthors.cs" />
+    <Compile Include="Domain\Interfaces\IBooks.cs" />
+    <Compile Include="Domain\Interfaces\ICategories.cs" />
+    <Compile Include="Domain\Interfaces\ICustomers.cs" />
+    <Compile Include="Domain\Interfaces\IPublishers.cs" />
     <Compile Include="Domain\Models\Author.cs" />
     <Compile Include="Domain\Models\Book.cs" />
     <Compile Include="Domain\Models\Category.cs" />
     <Compile Include="Domain\Models\Customer.cs" />
     <Compile Include="Domain\Models\Publisher.cs" />
-    <Compile Include="LibraryContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Domain\Interfaces\" />
     <Folder Include="Domain\Services\Mock\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

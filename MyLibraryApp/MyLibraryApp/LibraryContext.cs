@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryLib
+namespace MyLibraryApp
 {
     class LibraryContext
     {
-
-
     }
 }
