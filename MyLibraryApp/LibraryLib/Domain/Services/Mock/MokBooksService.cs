@@ -1,10 +1,9 @@
-﻿using LibraryLib.Domain.Interfaces;
+﻿using LibraryLib.Data;
+using LibraryLib.Domain.Interfaces;
 using LibraryLib.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LibraryLib.Domain.Services.Mock
 {
@@ -37,12 +36,25 @@ namespace LibraryLib.Domain.Services.Mock
 
         public List<Book> GetAllAvaiableBooks()
         {
-            throw new NotImplementedException();
+            //Optie 1
+            //List<Book> availableBooks = new List<Book>();
+            //foreach (var book in MockDataSeeder.Books)
+            //{
+            //    if (book.IsIssued)
+            //    {
+            //        availableBooks.Add(book);
+            //    }
+            //}
+            //return availableBooks;
+
+            //Optie 2 Linq
+            return MockDataSeeder.Books.Where(b => b.IsIssued == false).ToList();
         }
+
 
         public List<Book> GetAllBooks()
         {
-            throw new NotImplementedException();
+            return MockDataSeeder.Books;
         }
 
         public List<Book> GetAllBooksByAuthor(Author author)

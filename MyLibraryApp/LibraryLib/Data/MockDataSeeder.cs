@@ -40,5 +40,18 @@ namespace LibraryLib.Data
             new Customer{ID = 3, FirstName="Jan", LastName="Jansen"},
         };
 
+        public static List<Book> Books = new List<Book>()
+        {
+            new Book{Id = 0, BookName="Hamlet", Publisher=Publishers.ElementAt(0), Authors = new List<Author>{Authors.ElementAt(0)}, Categories = new List<Category>(){Categories.ElementAt(1)}, IsIssued = false},
+            new Book
+            {
+                Id = 1,
+                BookName = "Murder in the orient Express",
+                Publisher = Publishers.ElementAt(2),
+                Authors = new List<Author>(){Authors.ElementAt(1), Authors.ElementAt(3)},
+                Categories = new List<Category>(){Categories.ElementAt(0), Categories.ElementAt(1)},
+                IsIssued = true,
+            }
+        };
     }
 }

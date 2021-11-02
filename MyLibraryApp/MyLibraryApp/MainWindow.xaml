@@ -14,23 +14,58 @@
         </Grid.ColumnDefinitions>
         <StackPanel>
             <Label Content="All Books" HorizontalAlignment="Center" />
-            <ListBox x:Name="lstAllBooks" HorizontalAlignment="Center" Width="194" MinHeight="350"/>
+            <ListBox x:Name="lstAllBooks" ItemsSource="{Binding Allbooks}" HorizontalAlignment="Center" Width="194" MinHeight="350">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Label Content="{Binding BookName}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                
+            </ListBox>
         </StackPanel>
         <StackPanel Grid.Column="1">
             <Label  Content="All Customers" HorizontalAlignment="Center" />
-            <ListBox x:Name="lstAllCustomers" HorizontalAlignment="Center" Width="194" MinHeight="350"/>
+            <ListBox x:Name="lstAllCustomers" ItemsSource="{Binding Customers}" HorizontalAlignment="Center" Width="194" MinHeight="350">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding FirstName}" MinWidth="60"/>
+                            <Label Content=" "/>
+                            <Label Content="{Binding LastName}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
         <StackPanel Grid.Column="2">
             <Label Content="Issue book:" HorizontalAlignment="Left" Margin="5"/>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <Label Content="Book:" MinWidth="80"/>
-                <ComboBox x:Name="cmbAvaiableBooks" HorizontalAlignment="Left" Width="120"/>
+                <ComboBox x:Name="cmbAvaiableBooks" ItemsSource="{Binding AvailableBooks}" HorizontalAlignment="Left" Width="120">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding BookName}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <Label Content="Customer:" MinWidth="80"/>
-                <ComboBox x:Name="cmbCustomer" HorizontalAlignment="Left" Width="120"/>
+                <ComboBox x:Name="cmbCustomer" ItemsSource="{Binding Customers}" HorizontalAlignment="Left" Width="120">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding FirstName}"/>
+                            <Label Content=" "/>
+                            <Label Content="{Binding LastName}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
             </StackPanel>
-            <Button x:Name="btnIssueBook" Content="Issue Book" HorizontalAlignment="Center" Width="100" Height="30"  Margin="5 10 5 5"/>
+            <Button x:Name="btnIssueBook" Content="Issue Book" HorizontalAlignment="Center" Width="100" Height="30" Margin="5" Click="btnIssueBook_Click"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
 ﻿using LibraryLib.Domain.Models;
+using LibraryLib.Domain.Services.Mock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +22,24 @@ namespace MyLibraryApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        LibraryContext context = new LibraryContext
+            (
+            new MokAuthorsService(),
+            new MokBooksService(),
+            new MokCategoriesService(),
+            new MokCustomerService(),
+            new MokPublishersService()
+            );
+
         public MainWindow()
         {
             InitializeComponent();
-            
+            DataContext = context;
+        }
+
+        private void btnIssueBook_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
