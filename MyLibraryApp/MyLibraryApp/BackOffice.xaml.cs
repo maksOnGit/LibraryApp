@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LibraryLib.Data;
+using LibraryLib.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,5 +29,33 @@ namespace MyLibraryApp
 
             DataContext = context;
         }
+
+        private void btnDeleteBook_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstAllBooks.SelectedItem != null)
+            {
+            context.DeleteBook((Book)lstAllBooks.SelectedItem);
+
+            }
+        }
+
+        private void btnAddBook_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtBookName != null || cmbAuthors.SelectedItem != null || cmbPublishers.SelectedItem != null || cmbCategories.SelectedItem != null)
+            {
+                bool res = context.CreateBook
+                    (
+                    txtBookName.Text,
+                    (Publisher)cmbPublishers.SelectedItem,
+                    new List<Author> { (Author)cmbAuthors.SelectedItem },
+                    new List<Category> { (Category)cmbCategories.SelectedItem }
+                    );
+            }
+            else
+            {
+                MessageBox.Show("Error ! Need more informations !");
+            }
+        }
+
     }
 }

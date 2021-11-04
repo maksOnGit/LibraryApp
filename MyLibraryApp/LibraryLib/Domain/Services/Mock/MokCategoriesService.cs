@@ -1,4 +1,5 @@
-﻿using LibraryLib.Domain.Interfaces;
+﻿using LibraryLib.Data;
+using LibraryLib.Domain.Interfaces;
 using LibraryLib.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -42,7 +43,7 @@ namespace LibraryLib.Domain.Services.Mock
 
         public List<Category> GetAllCategorie()
         {
-            throw new NotImplementedException();
+            return MockDataSeeder.Categories;
         }
 
         public Category GetCategoryById(int id)

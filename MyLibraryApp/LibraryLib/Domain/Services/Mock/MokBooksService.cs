@@ -11,27 +11,50 @@ namespace LibraryLib.Domain.Services.Mock
     {
         public bool CreateBook(Book book)
         {
-            throw new NotImplementedException();
+            MockDataSeeder.Books.Add(book);
+            return MockDataSeeder.Books.Contains(book);
         }
 
         public bool CreateBook(string bookName, Publisher publisher, List<Author> authors, List<Category> categories, bool isIssued = false)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            Book newBook = new Book
+            {
+                Id = GetAllBooks().Count,
+                BookName = bookName,
+                Publisher = publisher,
+                Authors = authors,
+                Categories = categories,
+                IsIssued = false,
+            };
+            return CreateBook(newBook);
         }
 
         public bool CreateBook(string bookName, int publisherID, List<Author> authors, List<Category> categories, bool isIssued = false)
         {
-            throw new NotImplementedException();
+            Publisher publisher = MockDataSeeder.Publishers.Where(p => p.ID == publisherID).FirstOrDefault();
+            Book newBook = new Book
+            {
+                Id = GetAllBooks().Count,
+                BookName = bookName,
+                Publisher = publisher,
+                Authors = authors,
+                Categories = categories,
+                IsIssued = false,
+            };
+            return CreateBook(newBook);
         }
 
         public bool DeleteBook(Book book)
         {
-            throw new NotImplementedException();
+            return MockDataSeeder.Books.Remove(book);
+            
         }
 
         public bool DeleteBookById(int id)
         {
-            throw new NotImplementedException();
+            Book book = MockDataSeeder.Books.Where(b => b.Id == id).FirstOrDefault();
+            return DeleteBook(book);
         }
 
         public List<Book> GetAllAvaiableBooks()

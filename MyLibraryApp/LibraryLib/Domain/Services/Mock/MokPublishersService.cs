@@ -1,8 +1,9 @@
-﻿using LibraryLib.Domain.Interfaces;
+﻿using LibraryLib.Data;
+using LibraryLib.Domain.Interfaces;
+using LibraryLib.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,7 +33,7 @@ namespace LibraryLib.Domain.Services.Mock
 
         public List<Publisher> GetAllPublishers()
         {
-            throw new NotImplementedException();
+            return MockDataSeeder.Publishers;
         }
 
         public Publisher GetPublisherById(int id)

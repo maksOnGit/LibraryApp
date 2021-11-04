@@ -8,7 +8,7 @@
         Title="BackOffice" Height="450" Width="800">
     <Grid>
         <Label Content="All Books: " HorizontalAlignment="Left" Margin="42,25,0,0" VerticalAlignment="Top"/>
-        <ListBox HorizontalAlignment="Left" ItemsSource="{Binding Allbooks}" Height="277" Margin="42,69,0,0" VerticalAlignment="Top" Width="184">
+        <ListBox x:Name="lstAllBooks" HorizontalAlignment="Left" ItemsSource="{Binding Allbooks}" Height="277" Margin="42,69,0,0" VerticalAlignment="Top" Width="184">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -17,18 +17,38 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="151,373,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnDeleteBook" Content="Delete" HorizontalAlignment="Left" Margin="151,373,0,0" VerticalAlignment="Top" Width="75" Click="btnDeleteBook_Click"/>
         <Label Content="Add Book: " HorizontalAlignment="Left" Margin="280,25,0,0" VerticalAlignment="Top"/>
         <Label Content="Book Name:" HorizontalAlignment="Left" Margin="280,69,0,0" VerticalAlignment="Top"/>
         <Label Content="Publisher:" HorizontalAlignment="Left" Margin="280,100,0,0" VerticalAlignment="Top" Width="68"/>
         <TextBox x:Name="txtBookName" HorizontalAlignment="Left" Height="23" Margin="357,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="357,104,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding AllPublishers}">
+        <ComboBox x:Name="cmbPublishers" HorizontalAlignment="Left" Margin="357,104,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding AllPublishers}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Label Content="{Binding PublisherName}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
+        <Label Content="Authors: " HorizontalAlignment="Left" Margin="280,131,0,0" VerticalAlignment="Top" Width="68"/>
+        <ComboBox x:Name="cmbAuthors" HorizontalAlignment="Left" Margin="357,135,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding AllAuthors}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                    <Label Content="{Binding FirstName}"/>
+                    <Label Content="{Binding LastName}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Content="Categories" HorizontalAlignment="Left" Margin="280,162,0,0" VerticalAlignment="Top" Width="68"/>
+        <ComboBox x:Name="cmbCategories" HorizontalAlignment="Left" Margin="357,166,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding AllCategories}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding CategoryName}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button x:Name="btnAddBook" Content="Add Book" HorizontalAlignment="Left" Margin="379,213,0,0" VerticalAlignment="Top" Width="75" Click="btnAddBook_Click"/>
 
     </Grid>
 </Window>
