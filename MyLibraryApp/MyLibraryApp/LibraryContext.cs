@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MyLibraryApp
 {
-    class LibraryContext : INotifyPropertyChanged
+    public class LibraryContext : INotifyPropertyChanged
     {
 
         #region Services
@@ -109,6 +109,19 @@ namespace MyLibraryApp
         {
             Customers = new ObservableCollection<Customer>(_customersService.GetAllCustomers());
         }
+
+        public void IssueBook(Book book)
+        {
+            _booksService.IssueBook(book);
+            GetBooks();         
+        }
+
+        public void IssueBookById(int id)
+        {
+            _booksService.IssueBookById(id);
+            GetBooks();
+        }
+
         #endregion
 
         // Interface implementation

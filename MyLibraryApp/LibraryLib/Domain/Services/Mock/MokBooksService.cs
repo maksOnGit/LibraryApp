@@ -99,12 +99,23 @@ namespace LibraryLib.Domain.Services.Mock
 
         public bool IssueBook(Book book)
         {
-            throw new NotImplementedException();
+            book.IsIssued = true;
+            //if (book.IsIssued == true)
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+
+            return book.IsIssued;
         }
 
         public bool IssueBookById(int id)
         {
-            throw new NotImplementedException();
+            Book book = GetAllBooks().Where(b => b.Id == id).FirstOrDefault();
+            return IssueBook(book);
         }
 
         public bool ReturnBook(Book book)

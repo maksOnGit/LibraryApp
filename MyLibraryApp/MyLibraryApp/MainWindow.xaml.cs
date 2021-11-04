@@ -39,7 +39,15 @@ namespace MyLibraryApp
 
         private void btnIssueBook_Click(object sender, RoutedEventArgs e)
         {
+                     
+            context.IssueBook((Book)cmbAvaiableBooks.SelectedItem);
 
+        }
+
+        private void btnBackOffice_Click(object sender, RoutedEventArgs e)
+        {
+            BackOffice backOffice = new BackOffice(context);            
+            backOffice.Show();
         }
     }
 }

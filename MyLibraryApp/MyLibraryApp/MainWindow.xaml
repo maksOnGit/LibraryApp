@@ -10,7 +10,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition>
+            </ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel>
             <Label Content="All Books" HorizontalAlignment="Center" />
@@ -22,7 +23,7 @@
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-                
+
             </ListBox>
         </StackPanel>
         <StackPanel Grid.Column="1">
@@ -57,15 +58,16 @@
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                            <Label Content="{Binding FirstName}"/>
-                            <Label Content=" "/>
-                            <Label Content="{Binding LastName}"/>
+                                <Label Content="{Binding FirstName}"/>
+                                <Label Content=" "/>
+                                <Label Content="{Binding LastName}"/>
                             </StackPanel>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
             </StackPanel>
             <Button x:Name="btnIssueBook" Content="Issue Book" HorizontalAlignment="Center" Width="100" Height="30" Margin="5" Click="btnIssueBook_Click"/>
+            <Button x:Name="btnBackOffice" Content="Back Office" HorizontalAlignment="Center" Width="100" Height="30" Margin="125 220 5 5" Click="btnBackOffice_Click"/>
         </StackPanel>
     </Grid>
 </Window>
