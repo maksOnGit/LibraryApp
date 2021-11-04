@@ -47,6 +47,10 @@ namespace LibraryLib.Domain.Services.Mock
 
         public bool DeleteBook(Book book)
         {
+            if (book.IsIssued == true)
+            {
+                return false;
+            }
             return MockDataSeeder.Books.Remove(book);
             
         }
@@ -122,17 +126,12 @@ namespace LibraryLib.Domain.Services.Mock
 
         public bool IssueBook(Book book)
         {
+            if (book != null)
+            {
             book.IsIssued = true;
-            //if (book.IsIssued == true)
-            //{
-            //    return true;
-            //}
-            //else
-            //{
-            //    return false;
-            //}
-
             return book.IsIssued;
+            }
+            return false;
         }
 
         public bool IssueBookById(int id)

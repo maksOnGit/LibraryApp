@@ -157,16 +157,18 @@ namespace MyLibraryApp
 
         public bool CreateBook(string bookName, Publisher publisher, List<Author> authors, List<Category> categories)
         {
+            authors.RemoveAll(a => a == null);
             bool res = _booksService.CreateBook(bookName, publisher, authors, categories);
             GetBooks();
             return res;
         }
-        public void DeleteBook(Book book)
+        public bool DeleteBook(Book book)
         {
      
             //_booksService.DeleteBook(book);
-            _booksService.DeleteBook(book);
+            bool res =_booksService.DeleteBook(book);
             GetBooks();
+            return res;
         }
         public void GetCategories()
         {

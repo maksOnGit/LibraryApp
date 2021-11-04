@@ -40,6 +40,16 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
+        <ComboBox x:Name="cmbAuthors2" HorizontalAlignment="Left" Margin="482,135,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding AllAuthors}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding FirstName}"/>
+                        <Label Content="{Binding LastName}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         <Label Content="Categories" HorizontalAlignment="Left" Margin="280,162,0,0" VerticalAlignment="Top" Width="68"/>
         <ComboBox x:Name="cmbCategories" HorizontalAlignment="Left" Margin="357,166,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding AllCategories}">
             <ComboBox.ItemTemplate>

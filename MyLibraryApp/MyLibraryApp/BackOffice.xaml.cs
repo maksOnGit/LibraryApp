@@ -34,8 +34,15 @@ namespace MyLibraryApp
         {
             if (lstAllBooks.SelectedItem != null)
             {
-            context.DeleteBook((Book)lstAllBooks.SelectedItem);
-
+             bool res = context.DeleteBook((Book)lstAllBooks.SelectedItem);
+                if (res == false)
+                {
+                    MessageBox.Show("Book is issued!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select a book first !");
             }
         }
 
@@ -47,7 +54,7 @@ namespace MyLibraryApp
                     (
                     txtBookName.Text,
                     (Publisher)cmbPublishers.SelectedItem,
-                    new List<Author> { (Author)cmbAuthors.SelectedItem },
+                    new List<Author> { (Author)cmbAuthors.SelectedItem, (Author)cmbAuthors2.SelectedItem },
                     new List<Category> { (Category)cmbCategories.SelectedItem }
                     );
             }
