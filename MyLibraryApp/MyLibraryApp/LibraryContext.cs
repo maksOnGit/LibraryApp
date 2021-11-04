@@ -155,6 +155,13 @@ namespace MyLibraryApp
 
         #region Methods
 
+        public bool CreatePublisher(string name)
+        {
+            bool res = _publisherService.CreatePublisher(name);
+            GetPublishers();
+            return res;
+        }
+
         public bool CreateBook(string bookName, Publisher publisher, List<Author> authors, List<Category> categories)
         {
             authors.RemoveAll(a => a == null);

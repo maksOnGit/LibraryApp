@@ -64,5 +64,27 @@ namespace MyLibraryApp
             }
         }
 
+        private void btnAddPublisher_Click(object sender, RoutedEventArgs e)
+        {
+            bool res = context.CreatePublisher(txtPublisherName.Text);
+            if (res)
+            {
+                MessageBox.Show("Publisher Created !");
+            }
+            else
+            {
+                MessageBox.Show("This publisher exist already !");
+            }
+        }
+
+        private void btnAddCategory_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAddAuthor_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

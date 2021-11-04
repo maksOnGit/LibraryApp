@@ -13,12 +13,31 @@ namespace LibraryLib.Domain.Services.Mock
     {
         public bool CreatePublisher(Publisher publisher)
         {
-            throw new NotImplementedException();
+            // IMPLEMENT EQUALS AND HASHCODE IN Publisher Class ! If not, the next checker will not work !
+            if (!GetAllPublishers().Contains(publisher))
+            {
+                MockDataSeeder.Publishers.Add(publisher);
+                return MockDataSeeder.Publishers.Contains(publisher);
+            }
+            return false;
         }
 
         public bool CreatePublisher(string name)
         {
-            throw new NotImplementedException();
+            if (name != string.Empty)
+            {
+                Publisher newPublisher = new Publisher
+                {
+                    ID = GetAllPublishers().Count,
+                    PublisherName = name,
+                };
+                    return CreatePublisher(newPublisher);
+            }
+            return false;
+
+
+            //newPublisher.PublisherName = name;
+            //newPublisher.ID = GetAllPublishers().Count;
         }
 
         public bool DeletePublisher(Publisher publisher)
