@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryLib.Domain.Models
 {
+    [Serializable]
     public class Book
     {
         public int Id { get; set; }
@@ -14,8 +15,6 @@ namespace LibraryLib.Domain.Models
         public List<Author> Authors { get; set; }
         public List<Category> Categories { get; set; }
         public bool IsIssued { get; set; }
-
-
 
     }
 }

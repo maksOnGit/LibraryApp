@@ -1,4 +1,5 @@
 ﻿using LibraryLib.Domain.Models;
+using LibraryLib.Domain.Services.FileIO;
 using LibraryLib.Domain.Services.Mock;
 using System;
 using System.Collections.Generic;
@@ -22,15 +23,22 @@ namespace MyLibraryApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        //LibraryContext context = new LibraryContext
+        //    (
+        //    new MokAuthorsService(),
+        //    new MokBooksService(),
+        //    new MokCategoriesService(),
+        //    new MokCustomerService(),
+        //    new MokPublishersService()
+        //    );
         LibraryContext context = new LibraryContext
-            (
-            new MokAuthorsService(),
-            new MokBooksService(),
-            new MokCategoriesService(),
-            new MokCustomerService(),
-            new MokPublishersService()
-            );
-
+    (
+    new MokAuthorsService(),
+    new FileIOBookService(),
+    new MokCategoriesService(),
+    new MokCustomerService(),
+    new MokPublishersService()
+    );
         public MainWindow()
         {
             InitializeComponent();

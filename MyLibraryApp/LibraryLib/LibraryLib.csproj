@@ -52,11 +52,17 @@
     <Compile Include="Domain\Models\Category.cs" />
     <Compile Include="Domain\Models\Customer.cs" />
     <Compile Include="Domain\Models\Publisher.cs" />
+    <Compile Include="Domain\Services\FileIO\FileIOAutorsService.cs" />
+    <Compile Include="Domain\Services\FileIO\FileIOBookService.cs" />
+    <Compile Include="Domain\Services\FileIO\FileIOCategoriesService.cs" />
+    <Compile Include="Domain\Services\FileIO\FileIOCustomersService.cs" />
+    <Compile Include="Domain\Services\FileIO\FileIOPublishersService.cs" />
     <Compile Include="Domain\Services\Mock\MokAuthorsService.cs" />
     <Compile Include="Domain\Services\Mock\MokBooksService.cs" />
     <Compile Include="Domain\Services\Mock\MokCategoriesService.cs" />
     <Compile Include="Domain\Services\Mock\MokCustomerService.cs" />
     <Compile Include="Domain\Services\Mock\MokPublishersService.cs" />
+    <Compile Include="Helpers\Serializator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
