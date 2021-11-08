@@ -11,17 +11,17 @@ namespace LibraryLib.Data
     {
         public static List<Author> Authors = new List<Author>
         {
-            new Author{ ID = 0, FirstName="William", LastName="Shakespeare"},
-            new Author{ ID = 1, FirstName="Agatha", LastName="Christie"},
-            new Author{ ID = 2, FirstName="Barbara", LastName="Cartland"},
-            new Author{ ID = 3, FirstName="Danielle", LastName="Steel"},
+            new Author{ Id = 0, FirstName="William", LastName="Shakespeare"},
+            new Author{ Id = 1, FirstName="Agatha", LastName="Christie"},
+            new Author{ Id = 2, FirstName="Barbara", LastName="Cartland"},
+            new Author{ Id = 3, FirstName="Danielle", LastName="Steel"},
         };
 
         public static List<Publisher> Publishers = new List<Publisher>()
         {
-            new Publisher{ID = 0, PublisherName="Hachette"},
-            new Publisher{ID = 1, PublisherName="HarperCollins"},
-            new Publisher{ID = 2, PublisherName="Macmillian"},
+            new Publisher{Id = 0, PublisherName="Hachette"},
+            new Publisher{Id = 1, PublisherName="HarperCollins"},
+            new Publisher{Id = 2, PublisherName="Macmillian"},
         };
 
         public static List<Category> Categories = new List<Category>()
@@ -34,10 +34,10 @@ namespace LibraryLib.Data
 
         public static List<Customer> Customers = new List<Customer>()
         {
-            new Customer{ID = 0, FirstName="Quinten", LastName="De Clerck"},
-            new Customer{ID = 1, FirstName="Joe", LastName="Doe"},
-            new Customer{ID = 2, FirstName="Bob", LastName="Smith"},
-            new Customer{ID = 3, FirstName="Jan", LastName="Jansen"},
+            new Customer{Id = 0, FirstName="Quinten", LastName="De Clerck"},
+            new Customer{Id = 1, FirstName="Joe", LastName="Doe"},
+            new Customer{Id = 2, FirstName="Bob", LastName="Smith"},
+            new Customer{Id = 3, FirstName="Jan", LastName="Jansen"},
         };
 
         public static List<Book> Books = new List<Book>()

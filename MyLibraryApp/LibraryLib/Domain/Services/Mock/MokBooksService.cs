@@ -32,7 +32,7 @@ namespace LibraryLib.Domain.Services.Mock
 
         public bool CreateBook(string bookName, int publisherID, List<Author> authors, List<Category> categories, bool isIssued = false)
         {
-            Publisher publisher = MockDataSeeder.Publishers.Where(p => p.ID == publisherID).FirstOrDefault();
+            Publisher publisher = MockDataSeeder.Publishers.Where(p => p.Id == publisherID).FirstOrDefault();
             Book newBook = new Book
             {
                 Id = GetAllBooks().Count,
@@ -121,7 +121,8 @@ namespace LibraryLib.Domain.Services.Mock
 
         public Book GetBookById(int id)
         {
-            throw new NotImplementedException();
+            Book book = GetAllBooks().Where(b => b.Id == id).FirstOrDefault();
+            return book;
         }
 
         public bool IssueBook(Book book)

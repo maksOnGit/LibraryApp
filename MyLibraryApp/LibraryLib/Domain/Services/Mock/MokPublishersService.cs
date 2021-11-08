@@ -28,7 +28,7 @@ namespace LibraryLib.Domain.Services.Mock
             {
                 Publisher newPublisher = new Publisher
                 {
-                    ID = GetAllPublishers().Count,
+                    Id = GetAllPublishers().Count,
                     PublisherName = name,
                 };
                     return CreatePublisher(newPublisher);
