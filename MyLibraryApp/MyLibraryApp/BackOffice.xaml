@@ -18,6 +18,7 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
+                            <Label Content="{Binding Id}"/>
                             <Label Content="{Binding BookName}"/>
                         </StackPanel>
                     </DataTemplate>

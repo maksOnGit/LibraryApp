@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace LibraryLib.Domain.Models
 {
     [Serializable]
-    public class Customer : BaseModel
+
+    public class BaseModel
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public int Id { get; set; }
     }
 }
